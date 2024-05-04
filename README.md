@@ -17,7 +17,7 @@ P.S. In my opinion, this kind of navigation should be standard for all virtual t
 ```
 ```
 Parameters:
-      angle -finding angle of the nearest hotspot from mouse click (default 40)
+      angle - finding angle of the nearest hotspot from mouse click (default 40)
       offset - offset force when hotspot is not found (default 10)
 ```
 Works with the hotspot.onclick attribute by executing its code.
