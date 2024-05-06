@@ -8,19 +8,53 @@ Now, with the Click&Go plugin, you don't have to worry about whether or not it's
 
 P.S. In my opinion, this kind of navigation should be standard for all virtual tours. But that's just me :)
 
-### The connector is standard:
+### Plug-in connection (example):
 ```
-<plugin name="uhta3d_clickAndGo" url="plugins/uhta3d_clickAndGo.js" keep="true"
-    angle="40" 
-    offset="10" 
+<plugin name="uhta3d_clickandgo" url="plugins/uhta3d_clickandgo.js" keep="true"
+	angle="40" 
+	offset="10" 
+	onover="set(alpha, 0.5)"
+	onout="set(alpha, 1)"
+	onclick="onclick()"
 />
 ```
+
+### Parameters:
+* _**angle**_ - finding angle of the nearest hotspot from mouse click (default 40)
 ```
-Parameters:
-      angle - finding angle of the nearest hotspot from mouse click (default 40)
-      offset - offset force when hotspot is not found (default 10)
+    Krpano XML:
+        uhta3d_clickandgo.angle         - get value
+        uhta3d_clickandgo.angle = 40    - set value
+    JavaScript:
+        uhta3d_clickandgo.angle()       - get value
+        uhta3d_clickandgo.angle(40)     - set value
 ```
-Works with the hotspot.onclick attribute by executing its code.
+
+* _**offset**_ - offset force when hotspot is not found (default 10)
+```
+    Krpano XML:
+        uhta3d_clickandgo.offset        - get value
+        uhta3d_clickandgo.offset = 10   - set value
+    JavaScript:
+        uhta3d_clickandgo.offset()      - get value
+        uhta3d_clickandgo.offset(10)    - set value
+```
+
+* _**onover**_ - applies to the new found hotspot
+```
+    onover = "set(alpha, 0.5)"
+```
+
+* _**onout**_ - applies to the past hotspot that lost mouse focus
+```
+    onout = "set(alpha, 1)"
+```
+
+* _**onclick**_ - applies to the current hotspot
+```
+    onclick="onclick()"
+```
+_p.s. callwith() does not need to be used, it is already written inside the plugin. Works with the hotspot.onclick attribute by executing its code._
 
 > [!NOTE]
 > And as usual:
